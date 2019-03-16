@@ -1,96 +1,51 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-          target="_blank"
-          rel="noopener"
-          >babel</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-          target="_blank"
-          rel="noopener"
-          >eslint</a
-        >
-      </li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
-          >Forum</a
-        >
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
-          >Community Chat</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener"
-          >Twitter</a
-        >
-      </li>
-      <li>
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-      </li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li>
-        <a href="https://router.vuejs.org" target="_blank" rel="noopener"
-          >vue-router</a
-        >
-      </li>
-      <li>
-        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-devtools#vue-devtools"
-          target="_blank"
-          rel="noopener"
-          >vue-devtools</a
-        >
-      </li>
-      <li>
-        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener"
-          >vue-loader</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-          rel="noopener"
-          >awesome-vue</a
-        >
-      </li>
-    </ul>
-  </div>
+
+<template lang="pug">
+  .out
+    .div(v-for="item in items" v-bind:key="item.id")
+      .artist
+      img.artist__image(v-bind:src="item.image")
+      h4.text-center {{ item.title }}
+    h1 {{test}}
+    h2 {{msg}}
 </template>
+
 
 <script>
 export default {
   name: "HelloWorld",
   props: {
     msg: String
+  },
+  data() {
+    return {
+      test: "one",
+      items: [
+        {
+          id: 1,
+          title: "Miles Davis",
+          image:
+            "https://img.discogs.com/saz25T9xJgOthJLeH0-lQg7jk34=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-23755-1394387343-4500.jpeg.jpg"
+        },
+        {
+          id: 2,
+          title: "Kenny Burrell",
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNpBV6iV60h2HRfy-ai6FB_MWqxFpxGWxO6Km0UO4UAklKytRpig"
+        },
+        {
+          id: 3,
+          title: "Buddy Rich",
+          image:
+            "https://lastfm-img2.akamaized.net/i/u/avatar300s/5ba3d9e8b5cf492886a088974ae727a2.jpg"
+        },
+        {
+          id: 4,
+          title: "Chet baker",
+          image:
+            "http://cdn.musicjazzfree.com/artists/c/chet-baker/chet-baker-5.jpg"
+        }
+      ]
+    };
   }
 };
 </script>
